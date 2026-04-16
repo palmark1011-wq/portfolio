@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+/* ===== TELJES OLDAL BEÁLLÍTÁS ===== */
+body {
+    margin: 0; /* eltünteti a böngésző alap margóját */
+    height: 100vh; /* a teljes képernyő magasságát használja */
+    background: linear-gradient(to right, black, gray); /* fekete → szürke háttér */
+    font-family: Arial, sans-serif; /* betűtípus */
+}
+/* ===== TÁBLÁZAT BEÁLLÍTÁS ===== */
+table{
+    width: 90%; /* a táblázat a képernyő 90%-át foglalja el */
+    margin: 60px auto; /* felül 60px hely, vízszintesen középre */
+    border-collapse: collapse; /* a cellák kerete összeolvad */
+}
+
+/* ===== TÁBLÁZAT CELLÁK ===== */
+td {
+    width: 33.33%; 
+    text-align: center; 
+    padding: 30px;
+    font-size: 22px; 
+    font-weight: bold; 
+    color: white; 
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.6); 
+    transition: 0.4s; 
+}
+/* ===== LINK STÍLUS ===== */
+td a {
+    color: white;
+    text-decoration: none; 
+    display: block; 
+}
+/* ===== HOVER EFFEKT ===== */
+td:hover {
+    background-color: white; 
+    color: black; 
+    cursor: pointer; 
+}
+/* ===== LINK SZÍN HOVERKOR ===== */
+td:hover a {
+    color: black;
+}
+/* ===== BEMUTATKOZÁS TÁBLÁZAT: sorok magasabbak, képek elférnek ===== */
+.tartalom td {
+    border:2px solid white;
+    padding:10px;
+    color:white;
+    font-size:18px;
+    background-color: rgba(0,0,0,0.6);
+    vertical-align: middle; /* középre igazítás függőlegesen */
+}
+
+/* sorok minimum magassága */
+.tartalom tr {
+    height:150px; /* állítsd a képek méretéhez, pl. 150px */
+}
+
+/* bal oldali oszlop képeinek stílusa */
+.tartalom td:first-child img {
+    width: 100%;  /* kitölti a cellát */
+    height: 100%; /* kitölti a cellát */
+    object-fit: cover; /* arányosan vágva kitölti */
+}
+/* ===== Jobboldali szöveg sorkizárt, ne lógjon ki ===== */
+.tartalom td:last-child {
+    text-align: justify; /* sorkizárt */
+    overflow-wrap: break-word; /* hosszú szavak törése */
+    word-wrap: break-word;   /* régebbi böngészők kompatibilitása */
+    hyphens: auto;           /* ha lehet, szavakat tagolja kötőjellel */
+}
+.nagy-select{
+	font-size:30px;
+	padding:10px;
+}
+</style>
+</head>
+<!-- ===== FŐCÍM ===== -->
+<h1 style="color:white; text-align:center;">
+    Tanulmányok(9.osztály)
+</h1>
+<!-- ===== TÁBLÁZAT ===== -->
+<table>
+    <tr> 
+        <td>
+		<a href="bemutatkozas.html">Bemutatkozás</a>
+		</td> 
+        <td>
+		<a href="portfolio.html">Kezdőlap</a>
+		</td>
+        <td>
+		<a href="jovom.html">Jövőm</a>
+		</td> 
+    </tr>
+</table>
+<br>
+<form method=post action ="/cgi-bin/example.cgi">
+<center>
+<font face="Times New Roman" size ="7" color ="white">Válaszd ki az évet:</font>
+<select class="nagy-select" onchange="location=this.value;">
+<option value="tanulmanyok.html">Képek</option>
+<option selected value="tanulmanyok9.html">9. osztály</option>
+<option value="tanulmanyok10.html">10. osztály</option>
+<option value="tanulmanyok11.html">11. osztály</option>
+<option value="tanulmanyok12.html">12. osztály</option>
+<option value="tanulmanyok13.html">13. osztály</option>
+</select>
+</center>
+</form>

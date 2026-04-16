@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+
+<!-- Karakterkódolás beállítása -->
+<meta charset="UTF-8">
+
+<!-- Mobil kompatibilitás (a képernyő szélességéhez igazítja az oldalt) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===== TELJES OLDAL BEÁLLÍTÁS ===== */
+body {
+    margin: 0; /* eltünteti a böngésző alap margóját */
+    height: 100vh; /* a teljes képernyő magasságát használja */
+    background: linear-gradient(to right, black, gray); /* fekete → szürke háttér */
+    font-family: Arial, sans-serif; /* betűtípus */
+}
+
+/* ===== TÁBLÁZAT BEÁLLÍTÁS ===== */
+table{
+    width: 90%; /* a táblázat a képernyő 90%-át foglalja el */
+    margin: 60px auto; /* felül 60px hely, vízszintesen középre */
+    border-collapse: collapse; /* a cellák kerete összeolvad */
+}
+
+/* ha hosszú szöveg van, törje meg a sort */
+td{
+    word-wrap: break-word;
+}
+
+/* ===== TÁBLÁZAT CELLÁK ===== */
+td {
+    width: 33.33%; /* 3 egyforma szélességű cella */
+    text-align: center; /* szöveg középre igazítása */
+    padding: 30px; /* belső tér */
+    font-size: 22px; /* betűméret */
+    font-weight: bold; /* félkövér szöveg */
+    color: white; /* szöveg színe */
+    border: 2px solid white; /* fehér keret */
+    background-color: rgba(0, 0, 0, 0.6); /* félig átlátszó fekete háttér */
+    transition: 0.4s; /* animáció hover esetén */
+}
+
+/* ===== LINK STÍLUS ===== */
+td a {
+    color: white; /* link színe */
+    text-decoration: none; /* aláhúzás eltüntetése */
+    display: block; /* az egész cella kattintható */
+}
+
+/* ===== HOVER EFFEKT (egér ráhúzásakor) ===== */
+td:hover {
+    background-color: white; /* háttér fehér lesz */
+    color: black; /* szöveg fekete lesz */
+    cursor: pointer; /* egérmutató kéz lesz */
+}
+
+/* link színe hoverkor */
+td:hover a {
+    color: black;
+}
+
+/* ===== ALSÓ SZEKCIÓ (kép + szöveg rész) ===== */
+.also-szekcio{
+    width:90%; /* szélesség */
+    max-width:1200px; /* maximum szélesség nagy monitoron */
+    margin:60px auto; /* középre igazítás */
+    display:flex; /* flexbox elrendezés */
+    flex-wrap:wrap; /* ha kevés a hely, törjön új sorba */
+    gap:30px; /* tér a dobozok között */
+}
+
+/* ===== DOBOZOK (bal kép, jobb szöveg) ===== */
+.doboz{
+    flex:1 1 450px; /* rugalmas szélesség */
+    min-height:400px; /* minimum magasság */
+    background:rgba(0,0,0,0.6); /* háttér */
+    border:2px solid white; /* keret */
+    color:white; /* szöveg színe */
+    padding:20px; /* belső tér */
+    overflow-wrap:break-word; /* hosszú szöveg törése */
+}
+
+/* ===== KÉP BEÁLLÍTÁS ===== */
+.doboz img{
+    width:100%; /* kitölti a doboz szélességét */
+    height:100%; /* kitölti a magasságot */
+    object-fit:cover; /* kép arányosan vágva kitölti a helyet */
+}
+
+/* ===== NAGY LINK (fő címek a szövegdobozban) ===== */
+.nagy-link {
+    font-size: 28px; /* nagy betű */
+    color: white; /* szín */
+    text-decoration: underline; /* aláhúzás */
+}
+
+/* ===== KISEBB MAGYARÁZÓ SZÖVEG ===== */
+.kisebb{
+    font-size: 18px;
+    color: white;
+    text-decoration: underline;
+}
+
+/* ===== MOBIL NÉZET ===== */
+@media (max-width: 600px){
+
+/* táblázat kisebb mobilon */
+table{
+    width: 95%;
+}
+
+/* cellák kisebbek mobilon */
+td{
+    font-size: 16px;
+    padding: 15px;
+}
+
+/* nagy linkek kisebbek mobilon */
+.nagy-link{
+    font-size: 20px;
+}
+
+/* kisebb szöveg még kisebb */
+.kisebb{
+    font-size: 14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== FŐCÍM ===== -->
+<h1 style="color:white; text-align:center;">
+Portfolió
+</h1>
+
+<!-- ===== NAVIGÁCIÓS TÁBLÁZAT ===== -->
+<table>
+
+<tr>
+
+<!-- Bemutatkozás oldal link -->
+<td>
+<a href="bemutatkozas.html">Bemutatkozás</a>
+</td>
+
+<!-- Tanulmányok oldal link -->
+<td>
+<a href="tanulmanyok.html">Tanulmányok</a>
+</td>
+
+<!-- Jövőm oldal link -->
+<td>
+<a href="jovom.html">Jövőm</a>
+</td>
+
+</tr>
+
+</table>
+
+<!-- ===== ALSÓ RÉSZ: kép + leírás ===== -->
+<div class="also-szekcio">
+
+<!-- BAL OLDAL: kép rólam -->
+<div class="doboz">
+
+<img src="önkep.jpg"> <!-- saját kép betöltése -->
+
+</div>
+
+<!-- JOBB OLDAL: menüpontok és leírás -->
+<div class="doboz">
+
+<a href="bemutatkozas.html" class="nagy-link">Bemutatkozás</a>
+<span class="kisebb"> ← Kattints rá további részletekért</span>
+<br><br>
+<br>Rólam röviden</br>
+<br>Középiskoláról</br>
+<br>TDK (nem a Tudományos Diák Kör)</br>
+<br><br>
+<a href="munkaim.html" class="nagy-link">Munkáim</a>
+<span class="kisebb"> ← Kattints rá további részletekért</span>
+<br><br>
+<br>Középiskolai</br>
+<br>Duális képzésben</br>
+<br>Tapasztalatok</br>
+<br>Újdonságok</br>
+<br><br>
+<a href="jovom.html" class="nagy-link">Jövőm</a>
+<span class="kisebb"> ← Kattints rá további részletekért</span>
+<br><br>
+<br>Tovább tanulás</br>
+<br>Munkahely</br>
+<br>Összegzés</br>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+/* ===== TELJES OLDAL BEÁLLÍTÁS ===== */
+body {
+    margin: 0; /* eltünteti a böngésző alap margóját */
+    height: 100vh; /* a teljes képernyő magasságát használja */
+    background: linear-gradient(to right, black, gray); /* fekete → szürke háttér */
+    font-family: Arial, sans-serif; /* betűtípus */
+}
+/* ===== TÁBLÁZAT BEÁLLÍTÁS ===== */
+table{
+    width: 90%; /* a táblázat a képernyő 90%-át foglalja el */
+    margin: 60px auto; /* felül 60px hely, vízszintesen középre */
+    border-collapse: collapse; /* a cellák kerete összeolvad */
+}
+
+/* ===== TÁBLÁZAT CELLÁK ===== */
+td {
+    width: 33.33%; 
+    text-align: center; 
+    padding: 30px;
+    font-size: 22px; 
+    font-weight: bold; 
+    color: white; 
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.6); 
+    transition: 0.4s; 
+}
+/* ===== LINK STÍLUS ===== */
+td a {
+    color: white;
+    text-decoration: none; 
+    display: block; 
+}
+/* ===== HOVER EFFEKT ===== */
+td:hover {
+    background-color: white; 
+    color: black; 
+    cursor: pointer; 
+}
+/* ===== LINK SZÍN HOVERKOR ===== */
+td:hover a {
+    color: black;
+}
+/* ===== BEMUTATKOZÁS TÁBLÁZAT: sorok magasabbak, képek elférnek ===== */
+.tartalom td {
+    border:2px solid white;
+    padding:10px;
+    color:white;
+    font-size:18px;
+    background-color: rgba(0,0,0,0.6);
+    vertical-align: middle; /* középre igazítás függőlegesen */
+}
+
+/* sorok minimum magassága */
+.tartalom tr {
+    height:150px; /* állítsd a képek méretéhez, pl. 150px */
+}
+
+/* képek a táblázatban */
+.tartalom{
+    width:80%;
+    margin:50px auto;
+    border-collapse:collapse;
+}
+
+.tartalom td{
+    border:2px solid white;
+    padding:10px;
+    text-align:center;
+}
+
+/* KÉPEK */
+.tartalom img{
+    width:100%;       
+    height:auto;       
+    max-height:250px;  
+    object-fit:contain; 
+}
+.nagy-select{
+	font-size:30px;
+	padding:10px;
+}
+</style>
+</head>
+<!-- ===== FŐCÍM ===== -->
+<h1 style="color:white; text-align:center;">
+    Tanulmányok
+</h1>
+<!-- ===== TÁBLÁZAT ===== -->
+<table>
+    <tr> 
+        <td>
+		<a href="bemutatkozas.html">Bemutatkozás</a>
+		</td> 
+        <td>
+		<a href="portfolio.html">Kezdőlap</a>
+		</td>
+        <td>
+		<a href="jovom.html">Jövőm</a>
+		</td> 
+    </tr>
+</table>
+<br>
+<form method=post action ="/cgi-bin/example.cgi">
+<center>
+<font face="Times New Roman" size ="7" color ="white">Válaszd ki az évet:</font>
+<select class="nagy-select" onchange="location=this.value;">
+<option selected>Opciók</option>
+<option value="tanulmanyok9.html">9. osztály</option>
+<option value="tanulmanyok10.html">10. osztály</option>
+<option value="tanulmanyok11.html">11. osztály</option>
+<option value="tanulmanyok12.html">12. osztály</option>
+<option value="tanulmanyok13.html">13. osztály</option>
+</select>
+</center>
+</form>
+
+<!-- ===== BEMUTATKOZÁS TÁBLÁZAT ===== -->
+<table class="tartalom">
+
+<tr>
+<td><img src="nincs.jpg" /></td>
+<td><img src="nincs.jpg" /></td>
+</tr>
+
+<tr>
+<td><img src="nincs.jpg" /></td>
+<td><img src="nincs.jpg" /></td>
+</tr>
+
+<tr>
+<td><img src="1117.jpg" /></td>
+<td><img src="1118.jpg" /></td>
+</tr>
+
+<tr>
+<td><img src="1119.jpg" /></td>
+<td><img src="1120.jpg" /></td>
+</tr>
+
+<tr>
+<td><img src="1121.jpg" /></td>
+<td><img src="nincs.jpg" /></td>
+</tr>
+
+</table>
+<body>
+
