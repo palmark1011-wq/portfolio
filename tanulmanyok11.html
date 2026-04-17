@@ -62,18 +62,25 @@ td:hover a {
     height:150px; /* állítsd a képek méretéhez, pl. 150px */
 }
 
-/* bal oldali oszlop képeinek stílusa */
-.tartalom td:first-child img {
-    width: 100%;  /* kitölti a cellát */
-    height: 100%; /* kitölti a cellát */
-    object-fit: cover; /* arányosan vágva kitölti */
+/* képek a táblázatban */
+.tartalom{
+    width:80%;
+    margin:50px auto;
+    border-collapse:collapse;
 }
-/* ===== Jobboldali szöveg sorkizárt, ne lógjon ki ===== */
-.tartalom td:last-child {
-    text-align: justify; /* sorkizárt */
-    overflow-wrap: break-word; /* hosszú szavak törése */
-    word-wrap: break-word;   /* régebbi böngészők kompatibilitása */
-    hyphens: auto;           /* ha lehet, szavakat tagolja kötőjellel */
+
+.tartalom td{
+    border:2px solid white;
+    padding:10px;
+    text-align:center;
+}
+
+/* KÉPEK */
+.tartalom img{
+    width:100%;       
+    height:auto;       
+    max-height:250px;  
+    object-fit:contain; 
 }
 .nagy-select{
 	font-size:30px;
@@ -83,7 +90,7 @@ td:hover a {
 </head>
 <!-- ===== FŐCÍM ===== -->
 <h1 style="color:white; text-align:center;">
-    Tanulmányok(11.osztály)
+    Tanulmányok
 </h1>
 <!-- ===== TÁBLÁZAT ===== -->
 <table>
@@ -99,17 +106,3 @@ td:hover a {
 		</td> 
     </tr>
 </table>
-<br>
-<form method=post action ="/cgi-bin/example.cgi">
-<center>
-<font face="Times New Roman" size ="7" color ="white">Válaszd ki az évet:</font>
-<select class="nagy-select" onchange="location=this.value;">
-<option value="tanulmanyok.html">Képek</option>
-<option value="tanulmanyok9.html">9. osztály</option>
-<option value="tanulmanyok11.html">10. osztály</option>
-<option selected value="tanulmanyok11.html">11. osztály</option>
-<option value="tanulmanyok12.html">12. osztály</option>
-<option value="tanulmanyok13.html">13. osztály</option>
-</select>
-</center>
-</form>
